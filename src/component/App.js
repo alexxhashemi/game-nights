@@ -3,6 +3,8 @@ import './App.css';
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+import Games from 'components/Games';
+
 function App() {
   const [state, setState] = useState({
     users: [],
