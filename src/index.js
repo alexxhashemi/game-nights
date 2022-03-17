@@ -12,6 +12,9 @@ ReactDOM.render(
         <Route path='/' element={<App />}>
           <Route path='users' element={<Users />} />
           <Route path='games' element={<Games />} />
+          <Route path='login' element={<Login />} />
+          <Route path='register' element={<Register />} />
+          <Route path='rooms' element={<Rooms />} />
         </Route>
       </Routes>
     </BrowserRouter>

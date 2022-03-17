@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from 'react-router-dom';
+import { Outlet, Link } from 'react-router-dom';
 
 function App() {
   const [state, setState] = useState({
@@ -59,8 +59,10 @@ function App() {
         <Link to="/games" style={{ margin: '10px' }}>Games</Link>
         <Link to="/login" style={{ margin: '10px' }}>Login</Link>
         <Link to="/register" style={{ margin: '10px' }}>Register</Link>
+        <Link to="/rooms" style={{ margin: '10px' }}>Room</Link>
       </nav>
       {renderPosts}
+      <Outlet />
     </div>
   );
 }
