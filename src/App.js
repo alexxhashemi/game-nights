@@ -10,17 +10,17 @@ function App() {
   });
 
   useEffect(() => {
-    axios.get('/api/users').then(response => {
-      Promise.all([
-        axios.get('/api/users'),
-        axios.get('/api/games'),
-        axios.get('/register'),
+    // axios.get('/api/users').then(response => {
+    Promise.all([
+      axios.get('/users'),
+      axios.get('/games'),
+      axios.get('/register'),
 
-      ]).then((all) => {
-        // console.log('find', all[1].data)
-        setState(prev => ({ ...prev, users: all[0].data, games: all[1].data }));
-      });
+    ]).then((all) => {
+      // console.log('find', all[1].data)
+      setState(prev => ({ ...prev, users: all[0].data, games: all[1].data }));
     });
+    // });
   }, []);
 
   //GAME POST DATA
