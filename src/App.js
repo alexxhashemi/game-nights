@@ -15,9 +15,9 @@ function App() {
     Promise.all([
       axios.get('/users'),
       axios.get('/games'),
-      axios.get('/register'),
     ]).then((all) => {
-      console.log('find', all[1].data)
+      // console.log('all data', all);
+      // console.log('find', all[1].data)
       setState(prev => ({ ...prev, users: all[0].data, games: all[1].data }));
     });
   }, []);
@@ -58,9 +58,6 @@ function App() {
         <Link to="/register" style={{ margin: '10px' }}>Register</Link>
         <Link to="/rooms" style={{ margin: '10px' }}>Rooms</Link>
       </nav>
-      {renderPosts}
-      {/* <Users />
-      <Games /> */}
       <Outlet />
     </div>
   );
