@@ -1,6 +1,8 @@
 import './App.css';
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Users from './component/Users';
+import Games from './component/Games';
 import { Outlet, Link } from 'react-router-dom';
 
 function App() {
@@ -10,17 +12,14 @@ function App() {
   });
 
   useEffect(() => {
-    // axios.get('/api/users').then(response => {
     Promise.all([
       axios.get('/users'),
       axios.get('/games'),
       axios.get('/register'),
-
     ]).then((all) => {
-      // console.log('find', all[1].data)
+      console.log('find', all[1].data)
       setState(prev => ({ ...prev, users: all[0].data, games: all[1].data }));
     });
-    // });
   }, []);
 
   //GAME POST DATA
@@ -59,7 +58,9 @@ function App() {
         <Link to="/register" style={{ margin: '10px' }}>Register</Link>
         <Link to="/rooms" style={{ margin: '10px' }}>Rooms</Link>
       </nav>
-      {/* {renderPosts} */}
+      {renderPosts}
+      {/* <Users />
+      <Games /> */}
       <Outlet />
     </div>
   );
