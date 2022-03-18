@@ -14,6 +14,8 @@ function App() {
       Promise.all([
         axios.get('/api/users'),
         axios.get('/api/games'),
+        axios.get('/register'),
+
       ]).then((all) => {
         // console.log('find', all[1].data)
         setState(prev => ({ ...prev, users: all[0].data, games: all[1].data }));
