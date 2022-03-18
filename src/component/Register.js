@@ -12,7 +12,7 @@ export default function Register() {
   const [password, setPassword] = useState("")
 
 
-  const test = () => { axios.post('/users/register', {
+  const submitRegister = () => { axios.post('/users/register', {
     username: username,
     email: email,
     password: password,
@@ -39,7 +39,7 @@ export default function Register() {
         <input name="password" type="password" onChange={(e) => {setPassword(e.target.value)}}/>
       </label>
       <div>
-        <button onClick={test} type="submit">Register</button>
+        <button onClick={submitRegister} type="submit">Register</button>
       </div>
     </form>
   );
