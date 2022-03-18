@@ -1,8 +1,10 @@
 import React from "react";
 import RoomItem from "./RoomItem";
+import socketIoClient from 'socket.io-client'
+const ENDPOINT = 'http://localhost/3000'
+const connection = socketIoClient(ENDPOINT)
 
 export default function Rooms(props) {
-
   return (
     <h1>Rooms Page</h1>
   )
