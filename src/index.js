@@ -1,7 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './component/App';
+import App from './App';
+import Users from './component/Users';
+import Games from './component/Games';
+import Login from './component/Login';
+import Register from './component/Register';
+import Rooms from './component/Rooms';
+
+
+
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 

@@ -1,17 +1,23 @@
 import React from "react";
-import UserItem from "components/UserItem";
+import UserItem from "./UserItem";
 
 export default function Users(props) {
-  const Users = props.Users;
-  const List = Users.map((user) => (
-    <UserItem
-      key={user.id}
-      username={user.username}
-      email={user.email}
-      password={user.password}
-    />
-  ));
+
   return (
-  <ul>{List}</ul>
+    <h1>Users</h1>
   )
+
+  //the rest of code should work after we got the props from app.js
+  // const Users = props.Users;
+  // const List = Users.map((user) => (
+  //   <UserItem
+  //     key={user.id}
+  //     username={user.username}
+  //     email={user.email}
+  //     password={user.password}
+  //   />
+  // ));
+  // return (
+  //   <ul>{List}</ul>
+  // )
 }

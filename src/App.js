@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import React, { useState, useEffect } from "react";
 import axios from "axios";
@@ -8,9 +7,6 @@ function App() {
   const [state, setState] = useState({
     users: [],
     games: {},
-  });
-
-  axios.get("/api/users").then((response) => {
   });
 
   useEffect(() => {
@@ -59,9 +55,9 @@ function App() {
         <Link to="/games" style={{ margin: '10px' }}>Games</Link>
         <Link to="/login" style={{ margin: '10px' }}>Login</Link>
         <Link to="/register" style={{ margin: '10px' }}>Register</Link>
-        <Link to="/rooms" style={{ margin: '10px' }}>Room</Link>
+        <Link to="/rooms" style={{ margin: '10px' }}>Rooms</Link>
       </nav>
-      {renderPosts}
+      {/* {renderPosts} */}
       <Outlet />
     </div>
   );
