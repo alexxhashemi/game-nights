@@ -14,6 +14,7 @@ export default function Games(props) {
       time={game.time}
     />
   ));
-  return;
-  <ul>{List}</ul>;
+  return (
+    <ul>{List}</ul>
+    )
 }

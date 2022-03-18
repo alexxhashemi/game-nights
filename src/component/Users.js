@@ -6,11 +6,12 @@ export default function Users(props) {
   const List = Users.map((user) => (
     <UserItem
       key={user.id}
-      name={user.name}
+      username={user.username}
       email={user.email}
       password={user.password}
     />
   ));
-  return;
-  <ul>{List}</ul>;
+  return (
+  <ul>{List}</ul>
+  )
 }
