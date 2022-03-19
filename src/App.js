@@ -20,6 +20,8 @@ function App() {
         <Link to="/login" style={{ margin: '10px' }}>Login</Link>
         <Link to="/register" style={{ margin: '10px' }}>Register</Link>
         <Link to="/rooms" style={{ margin: '10px' }}>Rooms</Link>
+        <Link to="/host" style={{ margin: '10px' }}>Host</Link>
+
       </nav>
       <Outlet />
     </div>

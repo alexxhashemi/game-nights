@@ -7,6 +7,8 @@ import Appointments from './component/Appointments';
 import Login from './component/Login';
 import Register from './component/Register';
 import Rooms from './component/Rooms';
+import Host from './component/Host';
+
 
 
 
@@ -23,6 +25,8 @@ ReactDOM.render(
           <Route path='login' element={<Login />} />
           <Route path='register' element={<Register />} />
           <Route path='rooms' element={<Rooms />} />
+          <Route path='host' element={<Host />} />
+
         </Route>
       </Routes>
     </BrowserRouter>
