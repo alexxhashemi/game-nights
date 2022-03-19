@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function GameItem(props) {
+export default function AppointmentItem(props) {
   return (
     <article
-      key={props.key}
+      id={props.id}
       style={{ textAlign: 'center' }}>
       <h1>{props.title}</h1>
       <img style={{ width: '500px', height: '400px' }} src={props.image} />

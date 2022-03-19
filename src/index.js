@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import Users from './component/Users';
-import Games from './component/Games';
+import Appointments from './component/Appointments';
 import Login from './component/Login';
 import Register from './component/Register';
 import Rooms from './component/Rooms';
@@ -19,7 +19,7 @@ ReactDOM.render(
       <Routes>
         <Route path='/' element={<App />}>
           <Route path='users' element={<Users />} />
-          <Route path='games' element={<Games />} />
+          <Route path='appointments' element={<Appointments />} />
           <Route path='login' element={<Login />} />
           <Route path='register' element={<Register />} />
           <Route path='rooms' element={<Rooms />} />
