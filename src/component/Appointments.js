@@ -21,7 +21,7 @@ export default function Appointments(props) {
 
       <AppointmentItem
         key={appointment.id}
-        user_id={appointment.host_id}
+        host_id={appointment.host_id}
         room_id={appointment.room_id}
         title={appointment.title}
         description={appointment.description}
