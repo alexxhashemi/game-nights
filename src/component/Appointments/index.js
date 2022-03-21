@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Show from "./Show";
 import Form from "./Form";
+import FilterBar from "./FilterBar";
 import './index.css'
 
 export default function Appointments(props) {
@@ -31,7 +32,6 @@ export default function Appointments(props) {
       .catch(err => console.log('Error', err));
   }, []);
 
-  // const appointmentsList = appointments.map((appointment) => {
   const appointmentsList = appointments.filter((appointment) => {
     if (searchTerm === '') {
       return appointment
@@ -57,10 +57,9 @@ export default function Appointments(props) {
 
   return (
     <main className="appointments">
-      <header className="appointments-search-bar">
-        <label>Search for</label>
-        <input type='text' onChange={event => setSearchTerm(event.target.value)} />
-      </header>
+      <aside className="appointments-filter">
+        <FilterBar setSearchTerm={setSearchTerm} games={games} categories={categories} />
+      </aside>
       <div className="appointment">
         {appointmentsList}
       </div>
