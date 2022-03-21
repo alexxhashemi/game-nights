@@ -3,10 +3,17 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Users from './component/Users';
 import Appointments from './component/Appointments';
-import { Outlet, Link } from 'react-router-dom';
+import { Outlet, Link, useHistory } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
 
+
 function App() {
+  const history = useHistory();
+  
+  const logout = function() {
+    localStorage.clear();
+    history.push('/');
+  }
 
   const [cookies] = useCookies(['user']);
   return (
@@ -23,7 +30,7 @@ function App() {
           <Link to="/users" style={{ margin: '10px' }}>Users</Link>
         <Link to="/rooms" style={{ margin: '10px' }}>Rooms</Link>
         <Link to="/host" style={{ margin: '10px' }}>Host</Link>
-        <button type="submit">Logout</button>
+        <button type="submit" onClick={logout}>Logout</button>
         </> :
         <>
         <Link to="/appointments" style={{ margin: '10px' }}>Appointments</Link>
