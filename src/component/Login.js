@@ -9,8 +9,10 @@ export default function Login() {
 
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+  const [errMsg, setErrMsg] = useState("")
 
   const [cookies, setCookie] = useCookies(['user']);
+ 
 
   const submitLogin = () => { axios.post('/users/login', {
       email: email,
@@ -29,7 +31,7 @@ export default function Login() {
   return (
     <form action="/login" method="POST" onSubmit={e => { e.preventDefault();}}>
       <label>
-        <p>email</p>
+        <p>Email</p>
         <input name="email" type="text"  onChange={(e) => {setEmail(e.target.value)}}/>
       </label>
       <label>
@@ -37,7 +39,7 @@ export default function Login() {
         <input name="password" type="password"  onChange={(e) => {setPassword(e.target.value)}}/>
       </label>
       <div>
-        <button type="submit" onClick={submitLogin}>Submit</button>
+        <button variant="dark" type="submit" onClick={submitLogin}>Submit</button>
       </div>
     </form>
   );
