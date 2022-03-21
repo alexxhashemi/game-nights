@@ -4,6 +4,8 @@ import axios from "axios";
 import Users from './component/Users';
 import Appointments from './component/Appointments';
 import { Outlet, Link } from 'react-router-dom';
+import { useCookies } from "react-cookie";
+
 
 function App() {
 
@@ -15,6 +17,7 @@ function App() {
           paddingBottom: "1rem",
         }}
       >
+        
         <Link to="/users" style={{ margin: '10px' }}>Users</Link>
         <Link to="/appointments" style={{ margin: '10px' }}>Appointments</Link>
         <Link to="/login" style={{ margin: '10px' }}>Login</Link>
