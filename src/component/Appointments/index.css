@@ -1,0 +1,16 @@
+.appointments {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.appointments-search-bar{
+  margin-top: 15px;
+  /* width: 350px;
+  height: 20px; */
+}
+
+.appointments-search-bar input{
+  margin-left: 5px;
+}
