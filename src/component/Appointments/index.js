@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Show from "./Show";
-import Form from "./Form";
-import './index.css'
+import FilterBar from "./FilterBar";
+// import './index.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container, Row, Col } from 'react-bootstrap';
+
 
 export default function Appointments(props) {
 
@@ -31,7 +34,6 @@ export default function Appointments(props) {
       .catch(err => console.log('Error', err));
   }, []);
 
-  // const appointmentsList = appointments.map((appointment) => {
   const appointmentsList = appointments.filter((appointment) => {
     if (searchTerm === '') {
       return appointment
@@ -56,15 +58,15 @@ export default function Appointments(props) {
   );
 
   return (
-    <main className="appointments">
-      <header className="appointments-search-bar">
-        <label>Search for</label>
-        <input type='text' onChange={event => setSearchTerm(event.target.value)} />
-      </header>
-      <div className="appointment">
-        {appointmentsList}
-      </div>
-      {/* {<Form games={games} categories={categories} />} */}
-    </main>
+    <Container fluid>
+      <Row>
+        <Col xs lg="3">
+          <FilterBar setSearchTerm={setSearchTerm} games={games} categories={categories} />
+        </Col>
+        <Col>
+          {appointmentsList}
+        </Col>
+      </Row>
+    </Container>
   );
 }

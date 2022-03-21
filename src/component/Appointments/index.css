@@ -2,9 +2,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  /* flex-direction: column; */
 }
 
+.appointments-filter {
+  flex-direction: column;
+}
 .appointments-search-bar{
   margin-top: 15px;
   /* width: 350px;
