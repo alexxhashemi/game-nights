@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState} from "react";
 import { useNavigate } from "react-router-dom";
+import { useCookies } from 'react-cookie';
 
 export default function Register() {
   //Need inoder to redirect
@@ -11,6 +12,7 @@ export default function Register() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
+  const [cookies, setCookie] = useCookies(['user']);
 
   const submitRegister = () => { axios.post('/users/register', {
     username: username,
@@ -18,7 +20,10 @@ export default function Register() {
     password: password,
 
   }).then((res) => {
-    console.log(res)
+    // console.log(res)
+
+    setCookie('user', 'cookiesvalue');
+
     //redirects to homepage
     navigate("/");
   })

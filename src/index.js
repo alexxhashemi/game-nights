@@ -9,28 +9,29 @@ import Register from './component/Register';
 import Rooms from './component/Rooms';
 import Host from './component/Host';
 
-
-
-
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<App />}>
-          <Route path='users' element={<Users />} />
-          <Route path='appointments' element={<Appointments />} />
-          <Route path='login' element={<Login />} />
-          <Route path='register' element={<Register />} />
-          <Route path='rooms' element={<Rooms />} />
-          <Route path='host' element={<Host />} />
+import { CookiesProvider } from 'react-cookie';
 
-        </Route>
-      </Routes>
-    </BrowserRouter>
-  </React.StrictMode>,
+ReactDOM.render(
+  <CookiesProvider>
+    <React.StrictMode>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<App />}>
+            <Route path='users' element={<Users />} />
+            <Route path='appointments' element={<Appointments />} />
+            <Route path='login' element={<Login />} />
+            <Route path='register' element={<Register />} />
+            <Route path='rooms' element={<Rooms />} />
+            <Route path='host' element={<Host />} />
+
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </React.StrictMode>
+  </CookiesProvider>,
   document.getElementById('root')
 );
 
