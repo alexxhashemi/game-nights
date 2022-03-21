@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Show from "./Show";
-import Form from "./Form";
 import FilterBar from "./FilterBar";
-import './index.css'
+// import './index.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container, Row, Col } from 'react-bootstrap';
+
 
 export default function Appointments(props) {
 
@@ -56,14 +58,15 @@ export default function Appointments(props) {
   );
 
   return (
-    <main className="appointments">
-      <aside className="appointments-filter">
-        <FilterBar setSearchTerm={setSearchTerm} games={games} categories={categories} />
-      </aside>
-      <div className="appointment">
-        {appointmentsList}
-      </div>
-      {/* {<Form games={games} categories={categories} />} */}
-    </main>
+    <Container fluid>
+      <Row>
+        <Col xs lg="3">
+          <FilterBar setSearchTerm={setSearchTerm} games={games} categories={categories} />
+        </Col>
+        <Col>
+          {appointmentsList}
+        </Col>
+      </Row>
+    </Container>
   );
 }
