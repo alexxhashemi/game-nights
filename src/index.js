@@ -8,6 +8,8 @@ import Login from './component/Login';
 import Register from './component/Register';
 import Rooms from './component/Rooms';
 import Host from './component/Host';
+import RoomItem from './component/RoomItem';
+
 
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -26,6 +28,7 @@ ReactDOM.render(
             <Route path='register' element={<Register />} />
             <Route path='rooms' element={<Rooms />} />
             <Route path='host' element={<Host />} />
+            <Route path='rooms/:id' element={<RoomItem />} />
 
           </Route>
         </Routes>

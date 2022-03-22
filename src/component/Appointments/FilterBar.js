@@ -4,7 +4,7 @@ export default function FilterBar(props) {
   const [check, setCheck] = useState('false');
   const games = props.games;
   const categories = props.categories;
-  console.log('filter games', games);
+  // console.log('filter games', games);
 
   const onCheck = (event) => {
     setCheck(!check);
