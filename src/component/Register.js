@@ -1,51 +1,92 @@
 import axios from "axios";
-import React, { useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useCookies } from 'react-cookie';
+import { useCookies } from "react-cookie";
+import useLocalStorage from "use-local-storage";
+import "./Login.css";
 
 export default function Register() {
   //Need inoder to redirect
   let navigate = useNavigate();
 
   //States for database
-  const [username, setUsername] = useState("")
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const [cookies, setCookie] = useCookies(['user']);
+  const [cookies, setCookie] = useCookies(["user"]);
 
+  const submitRegister = () => {
+    axios
+      .post("/api/users/register", {
+        username: username,
+        email: email,
+        password: password,
+      })
+      .then((res) => {
+        setCookie("user", "cookiesvalue");
+        navigate("/");
+      });
+  };
 
-  const submitRegister = () => { axios.post('/api/users/register', {
-    username: username,
-    email: email,
-    password: password,
-
-  }).then((res) => {
-    // console.log(res)
-
-    setCookie('user', 'cookiesvalue');
-
-    //redirects to homepage
-    navigate("/");
-  })
-}
+  const [theme, setTheme] = useLocalStorage("theme" ? "dark" : "light");
+  const switchTheme = () => {
+    const newTheme = theme === "dark" ? "light" : "dark";
+    setTheme(newTheme);
+  };
 
   return (
-    <form action="/register" method="POST" onSubmit={e => { e.preventDefault(); }}>
-    <label>
-        <p>Username</p>
-        <input name="name" type="text" onChange={(e) => {setUsername(e.target.value)}}/>
-      </label>
-      <label>
-        <p>Email</p>
-        <input name="email" type="email" onChange={(e) => {setEmail(e.target.value)}}/>
-      </label>
-      <label>
-        <p>Password</p>
-        <input name="password" type="password" onChange={(e) => {setPassword(e.target.value)}}/>
-      </label>
-      <div>
-        <button onClick={submitRegister} type="submit">Register</button>
+    <form
+      action="/register"
+      method="POST"
+      onSubmit={(e) => {
+        e.preventDefault();
+      }}
+    >
+      <div className="main" data-theme={theme}>
+        <div className="login">
+          <h1> Register</h1>
+          <div className="container">
+            <div id="login">
+              <label>Username</label>
+              <input
+                type="text"
+                placeholder="Enter your username"
+                onChange={(e) => {
+                  setUsername(e.target.value);
+                }}
+              />
+              <label>E-mail</label>
+              <input
+                type="email"
+                placeholder="Enter your email"
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
+              />
+              <label>Password</label>
+              <input
+                type="password"
+                placeholder="Enter your password"
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
+              />
+              <div className="remember">
+                <input type="checkbox" checked="checked" />
+                <p>Agree with terms and conditions</p>
+              </div>
+              <button onClick={submitRegister} type="submit">
+                Register
+              </button>
+            </div>
+            <div className="bottom"></div>
+          </div>
+          <div className="theme-toggle">
+            <h5>Theme Mode</h5>
+            <i onClick={switchTheme} className="fas fa-toggle-on"></i>
+          </div>
+        </div>
       </div>
     </form>
   );

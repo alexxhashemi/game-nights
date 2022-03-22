@@ -21,7 +21,7 @@ export default function Show(props) {
         <Card.Text>
           {props.description}
         </Card.Text>
-        <Button variant="primary" type="submit" onClick={test}>JOIN</Button>
+        <Button variant="danger" type="submit" onClick={test}>Join</Button>
       </Card.Body>
       <Card.Footer className="text-muted">Room ID:{props.room_id}; Category: {props.category}; Game: {props.game}</Card.Footer>
     </Card>
