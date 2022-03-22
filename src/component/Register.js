@@ -15,7 +15,7 @@ export default function Register() {
   const [cookies, setCookie] = useCookies(['user']);
 
 
-  const submitRegister = () => { axios.post('/users/register', {
+  const submitRegister = () => { axios.post('/api/users/register', {
     username: username,
     email: email,
     password: password,

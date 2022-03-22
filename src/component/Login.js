@@ -14,7 +14,7 @@ export default function Login() {
   const [cookies, setCookie] = useCookies(['user']);
  
 
-  const submitLogin = () => { axios.post('/users/login', {
+  const submitLogin = () => { axios.post('/api/users/login', {
       email: email,
       password: password,
 
