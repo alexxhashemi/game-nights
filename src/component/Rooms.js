@@ -4,11 +4,11 @@ import RoomItem from "./RoomItem";
 import './Room.css';
 import socketIoClient from 'socket.io-client'
 import axios from "axios";
+
 const ENDPOINT = 'localhost:8080'
 const connection = socketIoClient(ENDPOINT)
 
 export default function Rooms(props) {
-
   //Jitsi API
   const apiRef = useRef();
   const [ logItems, updateLog ] = useState([]);
@@ -103,13 +103,40 @@ export default function Rooms(props) {
       .catch(error => error)
   }, []);
 
-  // const roomList = rooms.map((room) =>  room.title[0])
+//Was able to get a room made using but it renders all on the same page
+//Need to make it /rooms/:title? Then have it default room to that meeting link
+  const roomList = rooms.map((room) => {return <div>
+    <h1>Rooms Page</h1>
+    {/* <video></video> */}
+    
+          <h1 style = {{
+              fontFamily: 'sans-serif',
+              textAlign: 'center'
+          }}>
+              TESTING
+          </h1>
+<JitsiMeeting
+    // domain = { YOUR_DOMAIN }
+    roomName = {room.title}
+    spinner = { renderSpinner }
+    configOverwrite = {{
+      requireDisplayName: false,
+      prejoinPageEnabled: false
+}}
+    onApiReady = { externalApi => handleApiReady(externalApi) }
+    onReadyToClose = { handleReadyToClose }
+    getIFrameRef = { handleJitsiIFrameRef1 } />
 
-console.log('TESTING', generateRoomName())
+</div>})
+
+// console.log('TESTING', generateRoomName())
+// console.log('TESTING2', roomList)
+
 
 return (
   <div>
-    <h1>Rooms Page</h1>
+    {/* {roomList} */}
+    {/* <h1>Rooms Page</h1>
     {/* <video></video> */}
     
           <h1 style = {{
@@ -128,7 +155,7 @@ return (
    }}
               onApiReady = { externalApi => handleApiReady(externalApi) }
               onReadyToClose = { handleReadyToClose }
-              getIFrameRef = { handleJitsiIFrameRef1 } />
+              getIFrameRef = { handleJitsiIFrameRef1 } />  
       
   </div>
 )

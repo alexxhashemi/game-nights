@@ -1,9 +1,18 @@
 import React from "react";
 import { Card, Button } from 'react-bootstrap';
+import { useNavigate } from "react-router-dom";
+
 
 export default function Show(props) {
   // console.log('appItem props', props);
   // console.log('appItem props key', props.id);
+  let navigate = useNavigate();
+
+  const test = () => {
+    // console.log('HELLO')
+    navigate(`/rooms`);
+
+  }
   return (
     <Card bg='Info' className="mb-5">
       <Card.Img variant="top" src={props.image} />
@@ -12,7 +21,7 @@ export default function Show(props) {
         <Card.Text>
           {props.description}
         </Card.Text>
-        <Button variant="primary">JOIN</Button>
+        <Button variant="primary" type="submit" onClick={test}>JOIN</Button>
       </Card.Body>
       <Card.Footer className="text-muted">Room ID:{props.room_id}; Category: {props.category}; Game: {props.game}</Card.Footer>
     </Card>
