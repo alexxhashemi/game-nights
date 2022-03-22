@@ -3,13 +3,13 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useCookies } from 'react-cookie';
 
+
 export default function Login() {
    //Need inoder to redirect
   let navigate = useNavigate();
 
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-  const [errMsg, setErrMsg] = useState("")
 
   const [cookies, setCookie] = useCookies(['user']);
  
@@ -19,12 +19,10 @@ export default function Login() {
       password: password,
 
     }).then((res) => {
-        // console.log('data', res)
         
         setCookie('user', 'cookiesvalue');
         
-        //redirects to homepage
-        navigate("/");
+        navigate("/appointments");
     })
   }
 

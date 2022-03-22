@@ -7,16 +7,16 @@ import { Outlet, Link } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
 
 
+
 function App() {
-  const [removeCookie] = useCookies(['user']);
+  const [cookies, setCookies, removeCookie] = useCookies(['user']);
   
+
   const logout = function() {
-    removeCookie("user");
+    removeCookie('user');
     window.location.href = '/';
   }
   
-
-  const [cookies] = useCookies(['user']);
   return (
     <div className="App">
       <nav
@@ -25,7 +25,7 @@ function App() {
           paddingBottom: "1rem",
         }}
         >
-         { cookies.user ? 
+         {cookies.user ? 
         <>
         <Link to="/appointments" style={{ margin: '10px' }}>Appointments</Link>
         <Link to="/users" style={{ margin: '10px' }}>Users</Link>
