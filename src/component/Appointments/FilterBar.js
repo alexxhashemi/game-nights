@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function FilterBar(props) {
-
   const [check, setCheck] = useState('false');
   const games = props.games;
   const categories = props.categories;

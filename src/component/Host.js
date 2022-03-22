@@ -11,8 +11,6 @@ export default function Host() {
   const [category, setCategory] = useState("")
   const [game, setGame] = useState("")
 
-
-
   const submitForum = () => {
     axios.post('/api/appointments/new', {
       title: title,
@@ -21,7 +19,7 @@ export default function Host() {
       category: category,
       game: game,
     }).then((res) => {
-      navigate("/appointments");
+      navigate("/rooms");
     })
   }
   // console.log('HERE')

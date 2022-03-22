@@ -18,7 +18,6 @@ export default function Appointments(props) {
 
   const appointmentsList = appointments.map((appointment) => {
     return (
-
       <AppointmentItem
         key={appointment.id}
         host_id={appointment.host_id}
