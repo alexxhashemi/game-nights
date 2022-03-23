@@ -32,16 +32,15 @@ function App() {
        
          {cookies.user ? 
         <>
-        <Link to="/appointments" style={{ textDecoration: 'none', margin: '15px 25px'}} >Appointments</Link>
-        <Link to="/users" style={{ textDecoration: 'none', margin: '15px 25px'}}>Users</Link>
+        <Link to="/appointments" style={{ textDecoration: 'none', margin: '15px'}} >Appointments</Link>
+        <Link to="/users" style={{ textDecoration: 'none', margin: '15px'}}>Users</Link>
         {/* <Link to="/rooms" style={{ textDecoration: 'none', margin: '15px 25px'}}>Rooms</Link> */}
-        <Link to="/host" style={{ textDecoration: 'none', margin: '15px 25px'}}>Host</Link>
-        <button className= "logout" style={{ textDecoration: 'none', margin: '15px 3em'}}type="submit" onClick={logout}>Logout</button>
+        <Link to="/host" style={{ textDecoration: 'none', margin: '15px'}}>Host</Link>
+        <button className= "logout" style={{ textDecoration: 'none', margin: '15px 2em'}}type="submit" onClick={logout}>Logout</button>
         </> :
         <>
-        <Link to="/appointments" style={{ textDecoration: 'none', margin: '15px 25px'}}>Appointments</Link>
-        <Link to="/login" style={{ textDecoration: 'none', margin: '15px 25px'}}>Login</Link>
-        <Link to="/register" style={{ textDecoration: 'none', margin: '15px 25px'}}>Register</Link>
+        <Link to="/login" style={{ textDecoration: 'none', margin: '15px'}}>Login</Link>
+        <Link to="/register" style={{ textDecoration: 'none', margin: '15px'}}>Register</Link>
         </>
         }
         
