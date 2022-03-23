@@ -1,17 +1,24 @@
 import React, { useState } from 'react';
 
 export default function FilterBar(props) {
-  const [check, setCheck] = useState('false');
+  const [check, setCheck] = useState(false);
   const games = props.games;
   const categories = props.categories;
   // console.log('filter games', games);
 
+  // check ={
+  // game1: true,
+  // game2: false
+  // }
+
+  //single condition filter
   const onCheck = (event) => {
-    setCheck(!check);
-    if (check) {
-      return props.setSearchTerm(event.target.value);
+    if (!check) {
+      props.setSearchTerm(event.target.value);
+    } else {
+      props.setSearchTerm('');
     }
-    props.setSearchTerm('');
+    setCheck(!check);// check = true
   }
 
   const gamesList = games.map((game) => {

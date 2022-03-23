@@ -8,7 +8,7 @@ export default function Show(props) {
   // console.log('appItem props', props);
   // console.log('appItem props key', props.id);
   let navigate = useNavigate();
-  console.log('asda', props)
+  // console.log('asda', props)
   return (
     <Card bg='Info' className="mb-5">
       <Card.Img variant="top" src={props.image} />
