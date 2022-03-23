@@ -45,13 +45,12 @@ export default function Appointments(props) {
       <Show
         key={appointment.id}
         host_id={appointment.host_id}
-        room_id={appointment.room_id}
+        room={appointment.room}
         title={appointment.title}
         description={appointment.description}
         image={appointment.image}
         category={appointment.category}
         game={appointment.game}
-        time={appointment.time}
       />
     )
   }

@@ -8,8 +8,7 @@ export default function Show(props) {
   // console.log('appItem props', props);
   // console.log('appItem props key', props.id);
   let navigate = useNavigate();
-  console.log('asdxzczxcz', props)
-
+  console.log('asda', props)
   return (
   
     <Card bg='Info' className="appointment-container">
@@ -20,7 +19,7 @@ export default function Show(props) {
           {props.description}
         </Card.Text>
         <Link to={{
-          pathname: `/rooms/${props.title + " " + props.room_id}`,
+          pathname: `/rooms/${props.title + " " + props.room}`,
           state: {
             title: props.title,
           }
@@ -30,7 +29,7 @@ export default function Show(props) {
           </button>
         </Link>
       </Card.Body>
-      <Card.Footer className="text-muted">Room ID:{props.room_id}; Category: {props.category}; Game: {props.game}</Card.Footer>
+      <Card.Footer className="text-muted">Room ID:{props.room}; Category: {props.category}; Game: {props.game}</Card.Footer>
     </Card>
   );
 }

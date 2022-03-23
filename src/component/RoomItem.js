@@ -3,12 +3,17 @@ import { JitsiMeeting } from '@jitsi/react-sdk';
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import socketIoClient from 'socket.io-client'
+import Show from "./Appointments/Show";
+import { useNavigate } from "react-router-dom";
+
 
 const ENDPOINT = 'http://localhost:8080'
 const connection = socketIoClient(ENDPOINT)
 
 
 export default function RoomItem(props) {
+    let navigate = useNavigate();
+
       //Jitsi API
       const apiRef = useRef();
       const [logItems, updateLog] = useState([]);
@@ -120,13 +125,47 @@ export default function RoomItem(props) {
 
   useEffect(() => {
     getRoomData();
-    console.log(room);
   }, [])
 
-  // console.log('asdasdasdasd', rooms)
+
+  
+
   // console.log('TESTING', id.split(" "))
 
   let roomTitle= id.split(" ")
+
+  const [appointments, setAppointments] = useState([]);
+
+
+  console.log('asdasdasdasd', roomTitle.pop())
+  const find = roomTitle.pop()
+
+//   console.log('TESTINGNEW', roo)
+
+  
+
+   const [room_id, setRoom_id] = useState("");
+ 
+
+   const removePost = () => {
+    axios
+      .post("/api/appointments/delete", {
+        room_id: room_id,
+      
+      })
+      .then((res) => {
+        // setRoom_id(roomTitle.pop())
+        navigate("/appointments");
+      });
+  };
+
+//   setRoom_id(find)
+
+
+
+//    let g = room_id.map(y => {console.log('WORK', y)})
+
+console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', find)
 
   return (
     <div>
@@ -143,6 +182,20 @@ export default function RoomItem(props) {
                 onApiReady={externalApi => handleApiReady(externalApi)}
                 onReadyToClose={handleReadyToClose}
                 getIFrameRef={handleJitsiIFrameRef1} />
+            
+            
+          <div >
+          <form action="/appointments/delete" method="post"    onSubmit={(e) => {
+        e.preventDefault();
+      }}>
+            <input
+                onChange={(e) => {
+                    setRoom_id(e.target.value);
+                }}
+              />
+            <button onClick={removePost}  type="submit">Submit</button>
+          </form>
+        </div>
 
     </div>
   );
