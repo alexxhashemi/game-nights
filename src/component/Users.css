@@ -17,7 +17,6 @@
 }
 
 * {
-  padding: auto;
   margin: auto;
   box-sizing: border-box;
 }
@@ -28,19 +27,34 @@ body {
     sans-serif;
 }
 
-/* nav {
-  background: var(--background) !important;
-  color: var(--text-secondary);
-  --background: #ffffff;
-  --text-primary: #000;
-  --text-secondary: #c22000;
-} */
 
-a {
-  color: var(--text-secondary);
+
+.users {
+  background-color: var(--background);
+  color: var(--text-primary);
+  margin: 30px;
+  /* height: 100vh; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  transition: all 0.5s;
 }
 
+h2 {
+  text-align: center;
+  padding: 1rem;
+}
 
+.theme-toggle i {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.theme-toggle {
+  text-align: center;
+  /* margin-top: 2rem; */
+}
 
 @media screen and (max-width: 478px) {
   .login {
