@@ -1,17 +1,15 @@
 import React from "react";
 import { Card, Button } from 'react-bootstrap';
 import { useNavigate, Link } from "react-router-dom";
+import { v4 as uuidv4 } from 'uuid';
 
 
 export default function Show(props) {
   // console.log('appItem props', props);
   // console.log('appItem props key', props.id);
   let navigate = useNavigate();
+  console.log('asdxzczxcz', props.title)
 
-  const test = () => {
-    // console.log('HELLO')
-    // navigate(`/rooms/${props.room_id}`);
-  }
   return (
     <Card bg='Info' className="mb-5">
       <Card.Img variant="top" src={props.image} />
@@ -21,7 +19,7 @@ export default function Show(props) {
           {props.description}
         </Card.Text>
         <Link to={{
-          pathname: `/rooms/${props.room_id}`,
+          pathname: `/rooms/${props.game + " " + uuidv4()}`,
           state: {
             title: props.title,
           }
