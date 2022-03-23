@@ -8,7 +8,7 @@ export default function Show(props) {
   // console.log('appItem props', props);
   // console.log('appItem props key', props.id);
   let navigate = useNavigate();
-  console.log('asdxzczxcz', props.title)
+  console.log('asdxzczxcz', props)
 
   return (
     <Card bg='Info' className="mb-5">
@@ -19,7 +19,7 @@ export default function Show(props) {
           {props.description}
         </Card.Text>
         <Link to={{
-          pathname: `/rooms/${props.game + " " + uuidv4()}`,
+          pathname: `/rooms/${props.title + " " + props.room_id}`,
           state: {
             title: props.title,
           }
