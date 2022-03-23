@@ -29,9 +29,9 @@ export default function Register() {
       });
   };
 
-  const [theme, setTheme] = useLocalStorage("theme" ? "dark" : "light");
+  const [theme, setTheme] = useLocalStorage("theme" ? "light" : "dark");
   const switchTheme = () => {
-    const newTheme = theme === "dark" ? "light" : "dark";
+    const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
   };
 
@@ -83,7 +83,7 @@ export default function Register() {
             <div className="bottom"></div>
           </div>
           <div className="theme-toggle">
-            <h5>Theme Mode</h5>
+            <h4>☀️ 🌒</h4>
             <i onClick={switchTheme} className="fas fa-toggle-on"></i>
           </div>
         </div>
