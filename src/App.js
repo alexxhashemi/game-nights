@@ -1,11 +1,7 @@
 import './App.css';
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import Users from './component/Users';
-import Appointments from './component/Appointments';
+import React from "react";
 import { Outlet, Link } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
-import useLocalStorage from "use-local-storage";
 import "./App.css";
 
 function App() {
@@ -24,35 +20,32 @@ function App() {
     console.log("test")
   };
 
-  return (
-    <div className="App" data-theme={theme}>
 
-      {/* <h5>Theme Mode</h5>
-      <i onClick={switchTheme} className="fas fa-toggle-on"></i> */}
+  return (
+    <div className="App" >
+
 
       <nav
         style={{
-          background: "black",
           display: "flex",
           alignItems: "center",
           borderBottom: "solid 1px",
-          padding: "1rem",
           fontSize: "1.3em",
+          fontWeight: "bold",
         }}
       >
 
         {cookies.user ?
           <>
-            <Link to="/appointments" style={{ margin: '10px' }}>Appointments</Link>
-            <Link to="/users" style={{ margin: '10px' }}>Users</Link>
-            <Link to="/rooms" style={{ margin: '10px' }}>Rooms</Link>
-            <Link to="/host" style={{ margin: '10px' }}>Host</Link>
-            <button type="submit" onClick={logout}>Logout</button>
+            <Link to="/appointments" style={{ textDecoration: 'none', margin: '15px' }} >Appointments</Link>
+            <Link to="/users" style={{ textDecoration: 'none', margin: '15px' }}>Users</Link>
+            {/* <Link to="/rooms" style={{ textDecoration: 'none', margin: '15px 25px'}}>Rooms</Link> */}
+            <Link to="/host" style={{ textDecoration: 'none', margin: '15px' }}>Host</Link>
+            <button className="logout" style={{ textDecoration: 'none', margin: '15px 2em' }} type="submit" onClick={logout}>Logout</button>
           </> :
           <>
-            <Link to="/appointments" style={{ margin: '10px' }}>Appointments</Link>
-            <Link to="/login" style={{ margin: '10px' }}>Login</Link>
-            <Link to="/register" style={{ margin: '10px' }}>Register</Link>
+            <Link to="/login" style={{ textDecoration: 'none', margin: '15px' }}>Login</Link>
+            <Link to="/register" style={{ textDecoration: 'none', margin: '15px' }}>Register</Link>
           </>
         }
 

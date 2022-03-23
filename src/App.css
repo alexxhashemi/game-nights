@@ -7,6 +7,7 @@
   --form-bg: #fff;
 }
 
+
 [data-theme="dark"] {
   --background: #000;
   --text-primary: #fff;
@@ -14,6 +15,17 @@
   --accent: #c22000;
   --border: #808080;
   --form-bg: #191919;
+}
+
+nav {
+  border-bottom: "solid 1px";
+  padding: 10px 15px;
+  background: #000000;  
+}
+
+.logout {
+  display: flex;
+  padding: 15px,
 }
 
 * {
@@ -28,19 +40,13 @@ body {
     sans-serif;
 }
 
-/* nav {
-  background: var(--background) !important;
-  color: var(--text-secondary);
-  --background: #ffffff;
-  --text-primary: #000;
-  --text-secondary: #c22000;
-} */
 
-a {
+Link {
+  font-size: "1.5em";
   color: var(--text-secondary);
+  padding: 15px,
+
 }
-
-
 
 @media screen and (max-width: 478px) {
   .login {
