@@ -1,9 +1,8 @@
 import React, { useEffect, useState, useRef } from "react";
 import { JitsiMeeting } from '@jitsi/react-sdk';
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import socketIoClient from 'socket.io-client'
-import { useNavigate } from "react-router-dom";
  
 const ENDPOINT = 'http://localhost:8080'
 const connection = socketIoClient(ENDPOINT)
@@ -99,7 +98,6 @@ export default function RoomItem(props) {
       .catch(error => error)
   }, []);
  
- 
   const [room, setRoom] = useState({});
   const { id } = useParams();
  
@@ -123,30 +121,25 @@ export default function RoomItem(props) {
   }, [])
  
   let roomTitle = id.split(" ")
-  let g = id.split(" ")
+  let roomNum = id.split(" ")
  
-  const [appointments, setAppointments] = useState([]);
+  const room_id = roomNum[roomNum.length - 1]
  
-  const find = g[g.length - 1]
- 
-  const [room_id, setRoom_id] = useState("");
   const removePost = () => {
     axios
       .post("/api/appointments/delete", {
         room_id: room_id,
- 
       })
       .then((res) => {
         navigate("/appointments");
       });
   };
-  
+ 
   return (
     <div>
       <h1>{roomTitle[0]}</h1>
  
       <JitsiMeeting
-        // domain = { YOUR_DOMAIN }
         roomName={id}
         spinner={renderSpinner}
         configOverwrite={{
@@ -157,24 +150,10 @@ export default function RoomItem(props) {
         onReadyToClose={handleReadyToClose}
         getIFrameRef={handleJitsiIFrameRef1} />
  
- 
       <div >
-        <form action="/appointments/delete" method="post" onSubmit={(e) => {
-          e.preventDefault();
-        }}>
- 
-          <input
-            type="number"
-            name={find}
-            min={find}
-            max={find}
-            onChange={(e) => {
-              setRoom_id(e.target.value);
-            }} />
-          <button onClick={removePost} type="submit">End Call</button>
-        </form>
+        {/* Confirm */}
+          <button onClick={removePost}>End Call</button>
       </div>
- 
     </div>
   );
 }
