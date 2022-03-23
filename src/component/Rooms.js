@@ -2,11 +2,11 @@ import React, { useEffect, useState, useRef } from "react";
 import { JitsiMeeting } from '@jitsi/react-sdk';
 import RoomItem from "./RoomItem";
 import './Room.css';
-import socketIoClient from 'socket.io-client'
+// import socketIoClient from 'socket.io-client'
 import axios from "axios";
 
-const ENDPOINT = 'localhost:8080'
-const connection = socketIoClient(ENDPOINT)
+// const ENDPOINT = 'localhost:8080'
+// const connection = socketIoClient(ENDPOINT)
 
 export default function Rooms(props) {
     //Jitsi API

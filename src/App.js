@@ -6,17 +6,21 @@ import Appointments from './component/Appointments';
 import { Outlet, Link } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
 
+// import socketIoClient, { io } from 'socket.io-client'
+// const ENDPOINT = 'http://localhost:8080'
+// const connection = socketIoClient(ENDPOINT)
 
 
 function App() {
   const [cookies, setCookies, removeCookie] = useCookies(['user']);
-  
+
+  // useEffect(())
 
   const logout = function() {
     removeCookie('user');
     window.location.href = '/';
   }
-  
+
   return (
     <div className="App">
       <nav
@@ -24,22 +28,22 @@ function App() {
           borderBottom: "solid 1px",
           paddingBottom: "1rem",
         }}
-        >
-         {cookies.user ? 
-        <>
-        <Link to="/appointments" style={{ margin: '10px' }}>Appointments</Link>
-        <Link to="/users" style={{ margin: '10px' }}>Users</Link>
-        <Link to="/rooms" style={{ margin: '10px' }}>Rooms</Link>
-        <Link to="/host" style={{ margin: '10px' }}>Host</Link>
-        <button type="submit" onClick={logout}>Logout</button>
-        </> :
-        <>
-        <Link to="/appointments" style={{ margin: '10px' }}>Appointments</Link>
-        <Link to="/login" style={{ margin: '10px' }}>Login</Link>
-        <Link to="/register" style={{ margin: '10px' }}>Register</Link>
-        </>
+      >
+        {cookies.user ?
+          <>
+            <Link to="/appointments" style={{ margin: '10px' }}>Appointments</Link>
+            <Link to="/users" style={{ margin: '10px' }}>Users</Link>
+            <Link to="/rooms" style={{ margin: '10px' }}>Rooms</Link>
+            <Link to="/host" style={{ margin: '10px' }}>Host</Link>
+            <button type="submit" onClick={logout}>Logout</button>
+          </> :
+          <>
+            <Link to="/appointments" style={{ margin: '10px' }}>Appointments</Link>
+            <Link to="/login" style={{ margin: '10px' }}>Login</Link>
+            <Link to="/register" style={{ margin: '10px' }}>Register</Link>
+          </>
         }
-         
+
       </nav>
       <Outlet />
     </div>
