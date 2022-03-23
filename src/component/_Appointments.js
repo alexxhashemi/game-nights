@@ -16,17 +16,19 @@ export default function Appointments(props) {
       .catch(e => console.log(e))
   }, []);
 
+  console.log('TESTING', appointments)
+
   const appointmentsList = appointments.map((appointment) => {
     return (
       <AppointmentItem
         key={appointment.id}
         host_id={appointment.host_id}
-        room_id={appointment.room_id}
+        room={appointment.room}
         title={appointment.title}
         description={appointment.description}
         image={appointment.image}
         category={appointment.category}
-        time={appointment.time}
+        // test={appointments}
       />
     )
   }
