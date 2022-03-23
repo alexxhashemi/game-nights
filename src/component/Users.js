@@ -14,7 +14,7 @@ export default function Users(props) {
     <div className="users" data-theme={theme}>
       <h1>Users</h1>
       <div className="theme-toggle">
-        <h5>Theme Mode</h5>
+        <h4>☀️ 🌒</h4>
         <i onClick={switchTheme} className="fas fa-toggle-on"></i>
       </div>
     </div>
