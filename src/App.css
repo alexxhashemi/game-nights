@@ -17,33 +17,13 @@
   --form-bg: #191919;
 }
 
-#logo {
-  display: flex;
-  /* justify-content: "flex-start" !important; */
-}
-
-nav {
-  display: "flex";
-  align-items: "center";
-  border-bottom: 1px solid;
-  font-size: "1.3em";
-  font-weight: "bold";
-  border-bottom: "solid 1px";
-  padding: 10px 15px;
+.navbar {
+  padding: 30px;
   background: #000000; 
-  justify-content: "flex-end"
 }
 
-
-.logout {
-  display: flex;
-  padding: 15px,
-}
-
-* {
-  padding: auto;
-  margin: auto;
-  box-sizing: border-box;
+#logo {
+  margin-right: 4rem;
 }
 
 body {
@@ -53,15 +33,8 @@ body {
 }
 
 
-Link {
-  font-size: "1.5em";
-  color: var(--text-secondary);
-  padding: 15px,
-
-}
-
 @media screen and (max-width: 478px) {
-  .login {
+  .navbar {
     width: 95%;
   }
 }

@@ -60,11 +60,11 @@ export default function Host() {
         e.preventDefault();
       }}
     >
-      <div className="main" data-theme={theme}>
+      <div className="host-main" data-theme={theme}>
         <div className="host">
           <h1> Host</h1>
           <div className="host-container">
-            <div id="login">
+            <div id="host">
               <label>Title</label>
               <input
                 type="text"
@@ -102,8 +102,13 @@ export default function Host() {
               <label>Category</label>
               <div>
                 <input type='checkbox' name='Video Game' value='Video Game' onChange={onCheck} /> Video Game
+                <br></br>
                 <input type='checkbox' name='Card Game' value='Card Game' onChange={onCheck} /> Card Game
+                <br></br>
+
                 <input type='checkbox' name='Board Game' value='Board Game' onChange={onCheck} /> Board Game
+                <br></br>
+
               </div>
               <button type="submit" onClick={submitForum}>
                 Submit

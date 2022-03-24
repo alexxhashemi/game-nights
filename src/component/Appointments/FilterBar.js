@@ -59,8 +59,8 @@ export default function FilterBar(props) {
 
   return (
     <>
-      <div className="main" data-theme={theme}>
-        <div className="host">
+      <div className="filter-main" data-theme={theme}>
+        <div className="filter">
           <h1> Appointments</h1>
           <div className="filter-container">
             <div id="login">

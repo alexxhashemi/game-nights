@@ -16,32 +16,31 @@ function App() {
     <div className="App" >
 
 
-      <nav
+      <nav className="navbar"
         style={{
-          display: "flex",
-          alignItems: "center",
-          borderBottom: "solid 1px",
+          // display: "flex",
+          // alignItems: "center",
+          borderBottom: "solid 5px",
           fontSize: "1.3em",
           fontWeight: "bold",
+          justifyContent: "flex-start"
         }}
         >
-        <img id="logo" src="image/Game-night-logo.png" alt=""/>
+        <img id="logo" style={{justifyContent: "flex-start"}}src="image/Game-night-logo.png" alt=""/>
        
          {cookies.user ? 
         <>
-        <Link to="/appointments" style={{ textDecoration: 'none', margin: '15px 15px 15px 47em'}} >Appointments</Link>
+        <Link to="/appointments" style={{ textDecoration: 'none', margin: '15px'}} >Appointments</Link>
         {/* <Link to="/users" style={{ textDecoration: 'none', margin: '15px'}}>Users</Link> */}
         {/* <Link to="/rooms" style={{ textDecoration: 'none', margin: '15px 25px'}}>Rooms</Link> */}
         <Link to="/host" style={{ textDecoration: 'none', margin: '15px'}}>Host</Link>
         <button className= "logout" style={{ textDecoration: 'none', margin: '15px 1.2em'}}type="submit" onClick={logout}>Logout</button>
         </> :
         <>
-        <Link to="/login" style={{ textDecoration: 'none', margin: '15px 15px 15px 55em'}}>Login</Link>
+        <Link to="/login" style={{ textDecoration: 'none', margin: '15px'}}>Login</Link>
         <Link to="/register" style={{ textDecoration: 'none', margin: '15px'}}>Register</Link>
         </>
         }
-
-
       </nav>
 
       <Outlet />

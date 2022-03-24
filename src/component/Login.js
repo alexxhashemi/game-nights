@@ -40,7 +40,7 @@ export default function Login() {
         e.preventDefault();
       }}
     >
-      <div className="main" data-theme={theme}>
+      <div className="login-main" data-theme={theme}>
         <div className="login">
           <h1> Login</h1>
           <div className="container">

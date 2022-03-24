@@ -4,7 +4,7 @@ import Show from "./Show";
 import FilterBar from "./FilterBar";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col } from 'react-bootstrap';
-
+import './index.css'
 
 export default function Appointments(props) {
 
@@ -105,6 +105,7 @@ export default function Appointments(props) {
   );
 
   return (
+    <div className="appointment-container">
     <Container fluid>
       <Row>
         <Col xs lg="3">
@@ -115,5 +116,6 @@ export default function Appointments(props) {
         </Col>
       </Row>
     </Container>
+    </div>
   );
 }

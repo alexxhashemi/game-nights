@@ -10,8 +10,6 @@
 }
 .appointments-search-bar {
   margin-top: 15px;
-  /* width: 350px;
-  height: 20px; */
 }
 
 .appointments-search-bar input {
@@ -19,8 +17,8 @@
 }
 
 :root {
-  --background: #ffffff;
-  --text-primary: #000;
+  --background: #000000;
+  --text-primary: rgb(255, 255, 255);
   --text-secondary: #c22000;
   --accent: #c22000;
   --border: #333;
@@ -36,22 +34,16 @@
   --form-bg: #191919;
 }
 
-/* * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-} */
-
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
 }
 
-.main {
+.filter-main {
   background-color: var(--background);
   color: var(--text-primary);
-  height: 100vh;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -93,20 +85,6 @@ h2 {
   background-color: var(--form-bg);
 }
 
-.top {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.top i {
-  font-size: 1rem;
-}
-
-span {
-  padding: 0 10px;
-  background-color: var(--form-bg);
-}
 
 
 label {
@@ -123,26 +101,3 @@ input {
   color: var(--text-primary);
 }
 
-button {
-  background-color: var(--accent);
-  border: 1px solid var(--accent);
-  color: #fff;
-  margin: 16px 0;
-  padding: 10px;
-  border-radius: 10px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.bottom {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  font-size: 0.8rem;
-}
-
-.create {
-  font-size: 1rem;
-  margin-top: 1rem;
-  cursor: pointer;
-}
