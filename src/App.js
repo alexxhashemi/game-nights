@@ -1,8 +1,4 @@
-import './App.css';
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import Users from './component/Users';
-import Appointments from './component/Appointments';
+import React from "react";
 import { Outlet, Link } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
 import "./App.css";
@@ -15,7 +11,7 @@ function App() {
     removeCookie('user');
     window.location.href = '/';
   }
-  
+
   return (
     <div className="App" >
 
@@ -44,12 +40,12 @@ function App() {
         <Link to="/register" style={{ textDecoration: 'none', margin: '15px'}}>Register</Link>
         </>
         }
-        
-        
+
+
       </nav>
-      
+
       <Outlet />
-      
+
     </div>
   );
 }

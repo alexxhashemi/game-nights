@@ -13,16 +13,26 @@ export default function Host() {
   const [image, setImage] = useState("");
   const [category, setCategory] = useState("");
   const [game, setGame] = useState("");
+  const [check, setCheck] = useState('false');
+
 
   const submitForum = () => {
-    axios
-      .post("/api/appointments/new", {
-        title: title,
-        description: description,
+    Promise.all([
+      axios
+        .post("/api/appointments/new", {
+          title: title,
+          description: description,
+          image: image,
+          category: category,
+          game: game,
+        }),
+      axios.post("/api/games/new", {
         image: image,
-        category: category,
         game: game,
+        category: category
       })
+    ])
+
       .then((res) => {
         navigate("/rooms");
       });
@@ -33,6 +43,14 @@ export default function Host() {
     const newTheme = theme === "dark" ? "light" : "dark";
     setTheme(newTheme);
   };
+
+  const onCheck = (event) => {
+    setCheck(!check);
+    if (check) {
+      return setCategory(event.target.value);
+    }
+    setCategory('');
+  }
 
   return (
     <form
@@ -72,31 +90,21 @@ export default function Host() {
                 }}
               />
 
-              <label>Category</label>
-              <select
-                value="category"
-                onChange={(e) => {
-                  setCategory(e.target.value);
-                }}
-              >
-                <option value="Video Game">Video Game</option>
-                <option value="Card Game">Card Game</option>
-              </select>
-
               <label>Game Name</label>
-              <select
-                value="game"
+              <input
+                name="game"
+                type="text"
                 onChange={(e) => {
                   setGame(e.target.value);
                 }}
-              >
-                <option value="Lost Ark">Lost Ark</option>
-                <option value="Valorant">Valorant</option>
-                <option value="Risk of Rain 2">Risk of Rain 2</option>
-                <option value="UNO">UNO</option>
-                <option value="CATAN">CATAN</option>
-              </select>
+              />
 
+              <label>Category</label>
+              <div>
+                <input type='checkbox' name='Video Game' value='Video Game' onChange={onCheck} /> Video Game
+                <input type='checkbox' name='Card Game' value='Card Game' onChange={onCheck} /> Card Game
+                <input type='checkbox' name='Board Game' value='Board Game' onChange={onCheck} /> Board Game
+              </div>
               <button type="submit" onClick={submitForum}>
                 Submit
               </button>
