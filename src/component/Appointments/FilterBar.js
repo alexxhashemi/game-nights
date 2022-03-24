@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import useLocalStorage from "use-local-storage";
 import "./FilterBar.css";
 
@@ -6,21 +6,14 @@ export default function FilterBar(props) {
   const [check, setCheck] = useState(false);
   const games = props.games;
   const categories = props.categories;
-  // console.log('filter games', games);
 
-  // check ={
-  // game1: true,
-  // game2: false
-  // }
-
-  //single condition filter
   const onCheck = (event) => {
     if (!check) {
       props.setSearchTerm(event.target.value);
     } else {
       props.setSearchTerm('');
     }
-    setCheck(!check);// check = true
+    setCheck(!check);
   }
 
   const gamesList = games.map((game) => {
@@ -83,19 +76,6 @@ export default function FilterBar(props) {
           </div>
         </div>
       </div>
-
-      {/* <header className="appointments-search-bar">
-        <h3>Search for</h3>
-        <input type='text' onChange={event => props.setSearchTerm(event.target.value)} />
-      </header>
-      <h3>Filter by Game</h3>
-      <div className='Games'>
-        {gamesList}
-      </div> */}
-      {/* <h3>Filter by Category</h3>
-      <div className='Categories'>
-        {categoriesList}
-      </div> */}
     </>
   );
 }

@@ -24,21 +24,19 @@ function App() {
           fontSize: "1.3em",
           fontWeight: "bold",
         }}
-        >
-        <img id="logo" src="image/Game-night-logo.png" alt=""/>
-       
-         {cookies.user ? 
-        <>
-        <Link to="/appointments" style={{ textDecoration: 'none', margin: '15px 15px 15px 47em'}} >Appointments</Link>
-        {/* <Link to="/users" style={{ textDecoration: 'none', margin: '15px'}}>Users</Link> */}
-        {/* <Link to="/rooms" style={{ textDecoration: 'none', margin: '15px 25px'}}>Rooms</Link> */}
-        <Link to="/host" style={{ textDecoration: 'none', margin: '15px'}}>Host</Link>
-        <button className= "logout" style={{ textDecoration: 'none', margin: '15px 1.2em'}}type="submit" onClick={logout}>Logout</button>
-        </> :
-        <>
-        <Link to="/login" style={{ textDecoration: 'none', margin: '15px 15px 15px 55em'}}>Login</Link>
-        <Link to="/register" style={{ textDecoration: 'none', margin: '15px'}}>Register</Link>
-        </>
+      >
+        <img id="logo" src="image/Game-night-logo.png" alt="" />
+
+        {cookies.user ?
+          <>
+            <Link to="/appointments" style={{ textDecoration: 'none', margin: '15px 15px 15px 47em' }} >Appointments</Link>
+            <Link to="/host" style={{ textDecoration: 'none', margin: '15px' }}>Host</Link>
+            <button className="logout" style={{ textDecoration: 'none', margin: '15px 1.2em' }} type="submit" onClick={logout}>Logout</button>
+          </> :
+          <>
+            <Link to="/login" style={{ textDecoration: 'none', margin: '15px 15px 15px 55em' }}>Login</Link>
+            <Link to="/register" style={{ textDecoration: 'none', margin: '15px' }}>Register</Link>
+          </>
         }
 
 

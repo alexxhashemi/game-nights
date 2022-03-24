@@ -19,18 +19,4 @@ export default function Users(props) {
       </div>
     </div>
   );
-
-  //the rest of code should work after we got the props from app.js
-  // const Users = props.Users;
-  // const List = Users.map((user) => (
-  //   <UserItem
-  //     key={user.id}
-  //     username={user.username}
-  //     email={user.email}
-  //     password={user.password}
-  //   />
-  // ));
-  // return (
-  //   <ul>{List}</ul>
-  // )
 }
