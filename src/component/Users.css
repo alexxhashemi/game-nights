@@ -1,8 +1,8 @@
 :root {
   --background: #ffffff;
   --text-primary: #000;
-  --text-secondary: #c22000;
-  --accent: #c22000;
+  --text-secondary: #D40011;
+  --accent: #D40011;
   --border: #333;
   --form-bg: #fff;
 }
@@ -10,8 +10,8 @@
 [data-theme="dark"] {
   --background: #000;
   --text-primary: #fff;
-  --text-secondary: #c22000;
-  --accent: #c22000;
+  --text-secondary: #D40011;
+  --accent: #D40011;
   --border: #808080;
   --form-bg: #191919;
 }
@@ -26,8 +26,6 @@ body {
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
 }
-
-
 
 .users {
   background-color: var(--background);

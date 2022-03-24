@@ -1,25 +1,24 @@
 :root {
   --background: #ffffff;
   --text-primary: #000;
-  --text-secondary: #c22000;
-  --accent: #c22000;
+  --text-secondary: #d40011;
+  --accent: #d40011;
   --border: #333;
   --form-bg: #fff;
 }
 
-
 [data-theme="dark"] {
   --background: #000;
   --text-primary: #fff;
-  --text-secondary: #c22000;
-  --accent: #c22000;
+  --text-secondary: #d40011;
+  --accent: #d40011;
   --border: #808080;
   --form-bg: #191919;
 }
 
 .navbar {
   padding: 30px;
-  background: #000000; 
+  background: #000000;
 }
 
 #logo {
@@ -31,7 +30,6 @@ body {
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
 }
-
 
 @media screen and (max-width: 478px) {
   .navbar {
