@@ -1,4 +1,3 @@
-import './App.css';
 import React from "react";
 import { Outlet, Link } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
@@ -12,14 +11,6 @@ function App() {
     removeCookie('user');
     window.location.href = '/';
   }
-
-  const [theme, setTheme] = useLocalStorage("theme" ? "dark" : "light");
-  const switchTheme = () => {
-    const newTheme = theme === "dark" ? "light" : "dark";
-    setTheme(newTheme);
-    console.log("test")
-  };
-
 
   return (
     <div className="App" >

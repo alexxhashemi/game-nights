@@ -2,7 +2,6 @@ import React, { useEffect, useState, useRef } from "react";
 import { JitsiMeeting } from '@jitsi/react-sdk';
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
 export default function RoomItem(props) {
   let navigate = useNavigate();
