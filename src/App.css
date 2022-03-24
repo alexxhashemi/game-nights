@@ -17,11 +17,23 @@
   --form-bg: #191919;
 }
 
+#logo {
+  display: flex;
+  /* justify-content: "flex-start" !important; */
+}
+
 nav {
+  display: "flex";
+  align-items: "center";
+  border-bottom: 1px solid;
+  font-size: "1.3em";
+  font-weight: "bold";
   border-bottom: "solid 1px";
   padding: 10px 15px;
-  background: #000000;  
+  background: #000000; 
+  justify-content: "flex-end"
 }
+
 
 .logout {
   display: flex;
