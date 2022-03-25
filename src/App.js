@@ -2,6 +2,7 @@ import React from "react";
 import { Outlet, Link } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
 import "./App.css";
+import Home from "./component/Home";
 
 function App() {
   const [cookies, setCookies, removeCookie] = useCookies(['user']);
@@ -14,7 +15,7 @@ function App() {
 
   return (
     <div className="App" >
-
+      
 
       <nav className="navbar"
         style={{
@@ -28,6 +29,7 @@ function App() {
 
         {cookies.user ?
           <>
+          
             <Link to="/appointments" style={{ textDecoration: 'none', margin: '15px' }} >Appointments</Link>
             <Link to="/host" style={{ textDecoration: 'none', margin: '15px' }}>Host</Link>
             <button className="logout" style={{ margin: '15px 1.2em' }} type="submit" onClick={logout}>Logout</button>
@@ -38,9 +40,8 @@ function App() {
           </>
         }
       </nav>
-
       <Outlet />
-
+        <Home/>
     </div>
   );
 }

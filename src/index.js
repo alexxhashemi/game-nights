@@ -7,7 +7,7 @@ import Login from './component/Login';
 import Register from './component/Register';
 import Host from './component/Host';
 import RoomItem from './component/RoomItem';
-
+import Home from './component/Home';
 
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -20,6 +20,7 @@ ReactDOM.render(
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<App />}>
+            <Route path='home' element={<Home />} />
             <Route path='appointments' element={<Appointments />} />
             <Route path='login' element={<Login />} />
             <Route path='register' element={<Register />} />
