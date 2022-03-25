@@ -1,0 +1,9 @@
+.title {
+  text-align: center;
+  margin: 15px;
+}
+
+.end-call {
+display: flex;  
+margin: 20px auto;
+}
