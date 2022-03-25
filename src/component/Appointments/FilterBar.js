@@ -52,28 +52,28 @@ export default function FilterBar(props) {
 
   return (
     <>
-      <div className="filter-main" data-theme={theme}>
+      <div className="filter-main" data-theme="dark">
         <div className="filter">
-          <h1> Appointments</h1>
+          <h2> Appointments</h2>
           <div className="filter-container">
             <div id="login">
-              <h4>Search for</h4>
+              <h5>Search for</h5>
               <input
                 type="text"
                 onChange={(event) => props.setSearchTerm(event.target.value)}
               />
-
-              <h4>Filter by Game</h4>
+              <br></br>
+              <h5>Filter by Game</h5>
               <div className="Games">{gamesList}</div>
               <br></br>
-              <h4>Filter by Category</h4>
+              <h5>Filter by Category</h5>
               <div className="Categories">{categoriesList}</div>
             </div>
           </div>
-          <div className="theme-toggle">
+          {/* <div className="theme-toggle">
             <h4>☀️ 🌒</h4>
             <i onClick={switchTheme} className="fas fa-toggle-on"></i>
-          </div>
+          </div> */}
         </div>
       </div>
     </>

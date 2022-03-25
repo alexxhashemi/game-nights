@@ -118,9 +118,3 @@ button {
   font-weight: 600;
   cursor: pointer;
 }
-
-@media screen and (max-width: 478px) {
-  .login {
-    width: 95%;
-  }
-}

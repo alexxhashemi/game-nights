@@ -45,7 +45,7 @@ a {
 
 .host h1 {
   text-align: center;
-  margin: -6rem 0 2rem;
+  margin: 3rem 0 1rem;
   font-size: 48px;
 }
 
@@ -108,8 +108,8 @@ button {
   cursor: pointer;
 }
 
-@media screen and (max-width: 478px) {
-  .host {
-    width: 95%;
+@media screen and (max-width: 900px) {
+  .host-container  {
+    width: 550px;
   }
 }

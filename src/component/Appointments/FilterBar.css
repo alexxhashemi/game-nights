@@ -99,8 +99,8 @@ input {
   color: var(--text-primary);
 }
 
-@media screen and (max-width: 478px) {
-  .filter {
-    width: 50%;
+@media screen and (max-width: 1450px) {
+  .filter-container {
+    max-width: 95%;
   }
 }

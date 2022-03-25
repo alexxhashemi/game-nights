@@ -12,29 +12,26 @@ export default function Host() {
   const [image, setImage] = useState("");
   const [category, setCategory] = useState("");
   const [game, setGame] = useState("");
-  const [check, setCheck] = useState('false');
-
+  const [check, setCheck] = useState("false");
 
   const submitForum = () => {
     Promise.all([
-      axios
-        .post("/api/appointments/new", {
-          title: title,
-          description: description,
-          image: image,
-          category: category,
-          game: game,
-        }),
+      axios.post("/api/appointments/new", {
+        title: title,
+        description: description,
+        image: image,
+        category: category,
+        game: game,
+      }),
       axios.post("/api/games/new", {
         image: image,
         game: game,
-        category: category
-      })
+        category: category,
+      }),
     ])
-
-      .then((res) => {
-        navigate("/appointments");
-      });
+    .then((res) => {
+      navigate("/appointments");
+    });
   };
 
   const [theme, setTheme] = useLocalStorage("theme" ? "dark" : "light");
@@ -48,8 +45,8 @@ export default function Host() {
     if (check) {
       return setCategory(event.target.value);
     }
-    setCategory('');
-  }
+    setCategory("");
+  };
 
   return (
     <form
@@ -64,7 +61,9 @@ export default function Host() {
           <h1> Host</h1>
           <div className="host-container">
             <div id="host">
-              <label>Title</label>
+              <label>
+                <h5>Title</h5>
+              </label>
               <input
                 type="text"
                 onChange={(e) => {
@@ -72,7 +71,9 @@ export default function Host() {
                 }}
               />
 
-              <label>Description</label>
+              <label>
+                <h5>Description</h5>
+              </label>
               <input
                 type="text"
                 onChange={(e) => {
@@ -80,7 +81,9 @@ export default function Host() {
                 }}
               />
 
-              <label>Image URL</label>
+              <label>
+                <h5>Image URL</h5>
+              </label>
               <input
                 name="image"
                 type="text"
@@ -89,7 +92,9 @@ export default function Host() {
                 }}
               />
 
-              <label>Game Name</label>
+              <label>
+                <h5>Game Name</h5>
+              </label>
               <input
                 name="game"
                 type="text"
@@ -98,16 +103,34 @@ export default function Host() {
                 }}
               />
 
-              <label>Category</label>
+              <label>
+                <h5>Category</h5>
+              </label>
               <div>
-                <input type='checkbox' name='Video Game' value='Video Game' onChange={onCheck} /> Video Game
+                <input
+                  type="checkbox"
+                  name="Video Game"
+                  value="Video Game"
+                  onChange={onCheck}
+                />{" "}
+                Video Game
                 <br></br>
-                <input type='checkbox' name='Card Game' value='Card Game' onChange={onCheck} /> Card Game
+                <input
+                  type="checkbox"
+                  name="Card Game"
+                  value="Card Game"
+                  onChange={onCheck}
+                />{" "}
+                Card Game
                 <br></br>
-
-                <input type='checkbox' name='Board Game' value='Board Game' onChange={onCheck} /> Board Game
+                <input
+                  type="checkbox"
+                  name="Board Game"
+                  value="Board Game"
+                  onChange={onCheck}
+                />{" "}
+                Board Game
                 <br></br>
-
               </div>
               <button type="submit" onClick={submitForum}>
                 Submit
@@ -123,5 +146,3 @@ export default function Host() {
     </form>
   );
 }
-
-

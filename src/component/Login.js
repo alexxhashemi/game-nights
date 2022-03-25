@@ -45,7 +45,7 @@ export default function Login() {
           <h1> Login</h1>
           <div className="container">
             <div id="login">
-              <label>E-mail</label>
+              <label><h6>E-mail</h6></label>
               <input
                 type="email"
                 placeholder="Enter your email"
@@ -53,7 +53,7 @@ export default function Login() {
                   setEmail(e.target.value);
                 }}
               />
-              <label>Password</label>
+              <label><h6>Password</h6></label>
               <input
                 type="password"
                 placeholder="Enter your password"

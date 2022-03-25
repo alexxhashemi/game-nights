@@ -48,7 +48,7 @@ export default function Register() {
           <h1> Register</h1>
           <div className="container">
             <div id="login">
-              <label>Username</label>
+              <label><h6>Username</h6></label>
               <input
                 type="text"
                 placeholder="Enter your username"
@@ -56,7 +56,7 @@ export default function Register() {
                   setUsername(e.target.value);
                 }}
               />
-              <label>E-mail</label>
+              <label><h6>E-mail</h6></label>
               <input
                 type="email"
                 placeholder="Enter your email"
@@ -64,7 +64,7 @@ export default function Register() {
                   setEmail(e.target.value);
                 }}
               />
-              <label>Password</label>
+              <label><h6>Password</h6></label>
               <input
                 type="password"
                 placeholder="Enter your password"
