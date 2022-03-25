@@ -78,7 +78,7 @@ h2 {
   justify-content: center;
   align-items: center;
   padding: 1.5rem;
-  width: 400px;
+  width: 350px;
   margin: auto;
   box-shadow: 0px 0px 12px var(--border);
   border-radius: 8px;
@@ -97,4 +97,10 @@ input {
   border: 1px solid var(--border);
   background: var(--background);
   color: var(--text-primary);
+}
+
+@media screen and (max-width: 478px) {
+  .filter {
+    width: 50%;
+  }
 }
