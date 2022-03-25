@@ -140,9 +140,9 @@ export default function RoomItem(props) {
   };
 
   return (
-    <div>
+    <div className="main-room">
       <h1 className="title">{roomTitle[0]}</h1>
-
+      <br></br>
       <JitsiMeeting
         roomName={id}
         spinner={renderSpinner}

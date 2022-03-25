@@ -45,7 +45,9 @@ export default function Login() {
           <h1> Login</h1>
           <div className="container">
             <div id="login">
-              <label><h6>E-mail</h6></label>
+              <label>
+                <h6>E-mail</h6>
+              </label>
               <input
                 type="email"
                 placeholder="Enter your email"
@@ -53,7 +55,9 @@ export default function Login() {
                   setEmail(e.target.value);
                 }}
               />
-              <label><h6>Password</h6></label>
+              <label>
+                <h6>Password</h6>
+              </label>
               <input
                 type="password"
                 placeholder="Enter your password"
@@ -79,22 +83,3 @@ export default function Login() {
     </form>
   );
 }
-
-/*
-import useLocalStorage from "use-local-storage";
-
-
-const [theme, setTheme] = useLocalStorage("theme" ? "dark" : "light");
-  const switchTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    setTheme(newTheme);
-  };
-
-
-        <div className="app" data-theme={theme}>
-            <div className="theme-toggle">
-              <h5>Theme Mode</h5>
-                <i onClick={switchTheme} className="fas fa-toggle-on"></i>
-            </div>
-        </div>
-*/
