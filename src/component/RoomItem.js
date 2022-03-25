@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { JitsiMeeting } from '@jitsi/react-sdk';
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import './RoomItem.css'
 
 export default function RoomItem(props) {
   let navigate = useNavigate();
@@ -9,7 +10,6 @@ export default function RoomItem(props) {
   //Jitsi API
   const apiRef = useRef();
   const [logItems, updateLog] = useState([]);
-  const [showNew, toggleShowNew] = useState(false);
   const [knockingParticipants, updateKnockingParticipants] = useState([]);
 
   const printEventOutput = payload => {
@@ -31,27 +31,18 @@ export default function RoomItem(props) {
     apiRef.current.executeCommand('toggleChat');
     updateLog(items => [...items, `you have ${payload.unreadCount} unread messages`])
   };
+
   const handleKnockingParticipant = payload => {
     updateLog(items => [...items, JSON.stringify(payload)]);
     updateKnockingParticipants(participants => [...participants, payload?.participant])
   };
-  const resolveKnockingParticipants = condition => {
-    knockingParticipants.forEach(participant => {
-      apiRef.current.executeCommand('answerKnockingParticipant', participant?.id, condition(participant));
-      updateKnockingParticipants(participants => participants.filter(item => item.id === participant.id));
-    });
-  };
+
   const handleJitsiIFrameRef1 = iframeRef => {
     iframeRef.style.border = '10px solid #3d3d3d';
     iframeRef.style.background = '#3d3d3d';
-    iframeRef.style.height = '400px';
+    iframeRef.style.height = '700px';
   };
-  const handleJitsiIFrameRef2 = iframeRef => {
-    iframeRef.style.marginTop = '10px';
-    iframeRef.style.border = '10px dashed #df486f';
-    iframeRef.style.padding = '5px';
-    iframeRef.style.height = '400px';
-  };
+
   const handleApiReady = apiObj => {
     apiRef.current = apiObj;
     apiRef.current.on('knockingParticipant', handleKnockingParticipant);
@@ -80,19 +71,38 @@ export default function RoomItem(props) {
   );
 
   const [rooms, setRooms] = useState([]);
+  const [user, setUser] = useState([])
 
   useEffect(() => {
     axios.get('/api/appointments')
       .then((result) => {
+        // console.log('this is app', result.data.appointments)
         setRooms(result.data.appointments)
       })
       .catch(error => error)
   }, []);
 
+  //Show end meeting based on host ID
+  useEffect(() => {
+    axios.get('/api/users')
+      .then((result) => {
+        // console.log('this is users', result.data.users)
+        setUser(result.data.users)
+      })
+      .catch(error => error)
+  }, []);
+
+
   const [room, setRoom] = useState({});
-  const [user, setUser] = useState('');
-  const [users, setUsers] = useState([]);
   const { id } = useParams();
+
+  for(let meep of user) {
+    for(let beep of rooms) {
+      if(meep.id === beep.host_id) {
+        // console.log(beep.title)
+      }
+    }
+  }
 
   const getRoomData = async () => {
     try {
@@ -131,7 +141,7 @@ export default function RoomItem(props) {
 
   return (
     <div>
-      <h1>{roomTitle[0]}</h1>
+      <h1 className="title">{roomTitle[0]}</h1>
 
       <JitsiMeeting
         roomName={id}
@@ -144,10 +154,7 @@ export default function RoomItem(props) {
         onReadyToClose={handleReadyToClose}
         getIFrameRef={handleJitsiIFrameRef1} />
 
-      <div >
-        {/* Confirm */}
-        <button onClick={removePost}>End Call</button>
-      </div>
+        <button className="end-call" onClick={() => { if (window.confirm(`Are you sure you want to delete ${id} meeting?`)) removePost()} }>End Call</button>
     </div>
   );
 }
