@@ -1,49 +1,28 @@
 :root {
   --background: #ffffff;
   --text-primary: #000;
-  --text-secondary: #c22000;
-  --accent: #c22000;
+  --text-secondary: #d40011;
+  --accent: #d40011;
   --border: #333;
   --form-bg: #fff;
 }
 
-
 [data-theme="dark"] {
   --background: #000;
   --text-primary: #fff;
-  --text-secondary: #c22000;
-  --accent: #c22000;
+  --text-secondary: #d40011;
+  --accent: #d40011;
   --border: #808080;
   --form-bg: #191919;
 }
 
+.navbar {
+  padding: 30px;
+  background: #000000;
+}
+
 #logo {
-  display: flex;
-  /* justify-content: "flex-start" !important; */
-}
-
-nav {
-  display: "flex";
-  align-items: "center";
-  border-bottom: 1px solid;
-  font-size: "1.3em";
-  font-weight: "bold";
-  border-bottom: "solid 1px";
-  padding: 10px 15px;
-  background: #000000; 
-  justify-content: "flex-end"
-}
-
-
-.logout {
-  display: flex;
-  padding: 15px,
-}
-
-* {
-  padding: auto;
-  margin: auto;
-  box-sizing: border-box;
+  margin-right: 4rem;
 }
 
 body {
@@ -52,16 +31,8 @@ body {
     sans-serif;
 }
 
-
-Link {
-  font-size: "1.5em";
-  color: var(--text-secondary);
-  padding: 15px,
-
-}
-
 @media screen and (max-width: 478px) {
-  .login {
+  .navbar {
     width: 95%;
   }
 }

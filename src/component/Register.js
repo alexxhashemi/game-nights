@@ -43,7 +43,7 @@ export default function Register() {
         e.preventDefault();
       }}
     >
-      <div className="main" data-theme={theme}>
+      <div className="login-main" data-theme={theme}>
         <div className="login">
           <h1> Register</h1>
           <div className="container">

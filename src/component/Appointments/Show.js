@@ -12,8 +12,8 @@ export default function Show(props) {
   return (
   
     <Card bg='Info' className="appointment-container">
-      <Card.Img variant='top' src={props.image} />
-      <Card.Body>
+      <Card.Img className="card-image" variant='top' src={props.image} />
+      <Card.Body className="card-body">
         <Card.Title>{props.title}</Card.Title>
         <Card.Text className='text'>
           {props.description}
