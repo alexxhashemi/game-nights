@@ -23,7 +23,7 @@ function App() {
           justifyContent: "flex-start"
         }}
       >
-        <img id="logo" style={{ justifyContent: "flex-start" }} src="image/gameNightsLogo.png" alt="" />
+        <Link to="/"><img id="logo" style={{ justifyContent: "flex-start" }} src="image/gameNightsLogo.png" alt="" /></Link>
 
         {cookies.user ?
           <>
