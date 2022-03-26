@@ -1,10 +1,20 @@
-.main-home {
+/* .main-home {
   background-color: black;
   color: white;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 40px;
   height: 90vh;
   text-align: center;
+} */
+/* 
+.carousel-caption {
+  color: white;
+} */
+
+.d-block  {
+  height: 850px;
+  width: 500px;
 }
