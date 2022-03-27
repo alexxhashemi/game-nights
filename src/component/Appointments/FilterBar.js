@@ -57,16 +57,18 @@ export default function FilterBar(props) {
           <h2> Appointments</h2>
           <div className="filter-container">
             <div id="login">
-              <h5>Search for</h5>
+              <h4>Search for</h4>
               <input
                 type="text"
                 onChange={(event) => props.setSearchTerm(event.target.value)}
               />
               <br></br>
-              <h5>Filter by Game</h5>
+              <h4>Filter by Game</h4>
               <div className="Games">{gamesList}</div>
               <br></br>
-              <h5>Filter by Category</h5>
+              <br></br>
+              <h4>Filter by Category</h4>
+              
               <div className="Categories">{categoriesList}</div>
             </div>
           </div>
