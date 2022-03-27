@@ -106,7 +106,7 @@ export default function Host() {
               <label>
                 <h5>Category</h5>
               </label>
-              <div>
+              <div className="category">
                 <input
                   type="checkbox"
                   name="Video Game"
