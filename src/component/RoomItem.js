@@ -3,6 +3,7 @@ import { JitsiMeeting } from '@jitsi/react-sdk';
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import './RoomItem.css'
+import { v4 as uuidv4 } from 'uuid';
 
 export default function RoomItem(props) {
   let navigate = useNavigate();
@@ -38,7 +39,6 @@ export default function RoomItem(props) {
   };
 
   const handleJitsiIFrameRef1 = iframeRef => {
-    iframeRef.style.border = '10px solid #3d3d3d';
     iframeRef.style.background = '#3d3d3d';
     iframeRef.style.height = '700px';
   };
@@ -76,17 +76,14 @@ export default function RoomItem(props) {
   useEffect(() => {
     axios.get('/api/appointments')
       .then((result) => {
-        // console.log('this is app', result.data.appointments)
         setRooms(result.data.appointments)
       })
       .catch(error => error)
   }, []);
 
-  //Show end meeting based on host ID
   useEffect(() => {
     axios.get('/api/users')
       .then((result) => {
-        // console.log('this is users', result.data.users)
         setUser(result.data.users)
       })
       .catch(error => error)
@@ -121,13 +118,9 @@ export default function RoomItem(props) {
 
   useEffect(() => {
     getRoomData();
-    // console.log(room);
   }, [])
 
-  let roomTitle = id.split(" ")
-  let roomNum = id.split(" ")
-
-  const room_id = roomNum[roomNum.length - 1]
+  const room_id = id
 
   const removePost = () => {
     axios
@@ -141,7 +134,7 @@ export default function RoomItem(props) {
 
   return (
     <div className="main-room">
-      <h1 className="title">{roomTitle[0]}</h1>
+      <h1 className="title">{id}</h1>
       <br></br>
       <JitsiMeeting
         roomName={id}
@@ -158,4 +151,3 @@ export default function RoomItem(props) {
     </div>
   );
 }
-

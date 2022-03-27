@@ -30,7 +30,11 @@ export default function Host() {
       }),
     ])
     .then((res) => {
-      navigate("/appointments");
+      console.log(res)
+      if(title === " ") {
+        navigate(`/rooms/${title}%20`);
+      }
+      navigate(`/rooms/${title}`);
     });
   };
 

@@ -19,7 +19,7 @@ export default function Show(props) {
           {props.description}
         </Card.Text>
         <Link to={{
-          pathname: `/rooms/${props.title + " " + props.room}`,
+          pathname: `/rooms/${props.title}`,
           state: {
             title: props.title,
           }
