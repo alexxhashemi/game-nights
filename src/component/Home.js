@@ -24,8 +24,8 @@ export default function Home() {
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src="https://news.fnal.gov/wp-content/uploads/2020/02/2020-02-11_5e42c8469d971_White_background-scaled.jpg"
-      alt="Second slide"
+      src=""
+      alt="Appointments slide"
     />
 
     <Carousel.Caption>
@@ -37,7 +37,7 @@ export default function Home() {
     <img
       className="d-block w-100"
       src="https://64.media.tumblr.com/2531c9ddb7f53e2b2b4aec42ccdc0adb/tumblr_pcow7brvpb1tgl57yo1_1280.gifv"
-      alt="Third slide"
+      alt="Rooms slide"
     />
 
     <Carousel.Caption>
