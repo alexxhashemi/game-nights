@@ -24,25 +24,23 @@ export default function Home() {
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src=""
+      src="https://github.com/AliHashemi86/game-nights/blob/master/docs/AppointmentGif.gif?raw=true"
       alt="Appointments slide"
     />
 
-    <Carousel.Caption>
-      <h3>(Appointments stuff)</h3>
-      <p>(Appointments stuff)</p>
+    <Carousel.Caption style={{color: 'white'}}>
+      <h2>Users can view a list of game rooms </h2>
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src="https://64.media.tumblr.com/2531c9ddb7f53e2b2b4aec42ccdc0adb/tumblr_pcow7brvpb1tgl57yo1_1280.gifv"
+      src="https://github.com/AliHashemi86/game-nights/blob/master/docs/RoomsGif.gif?raw=true"
       alt="Rooms slide"
     />
 
-    <Carousel.Caption>
-      <h3>(Rooms stuff)</h3>
-      <p>(Rooms stuff)</p>
+    <Carousel.Caption style={{color: 'white'}}>
+      <h2>Users are able to join a game room and can be on video or chat with others within a room</h2>
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>
