@@ -6,6 +6,10 @@ import useLocalStorage from "use-local-storage";
 import "./Login.css";
 
 export default function Register() {
+  useEffect(() => {
+    document.title = "Register";  
+  }, []);
+
   //Need inoder to redirect
   let navigate = useNavigate();
 

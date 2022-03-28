@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { Outlet, Link } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
 import "./App.css";
@@ -27,7 +27,7 @@ function App() {
 
         {cookies.user ?
           <>
-            <Link to="/appointments" style={{ textDecoration: 'none', margin: '15px' }} >Appointments</Link>
+            <Link to="/meetings" style={{ textDecoration: 'none', margin: '15px' }} >Meetings</Link>
             <Link to="/host" style={{ textDecoration: 'none', margin: '15px' }}>Host</Link>
             <button className="logout" style={{ margin: '15px 1.2em' }} type="submit" onClick={logout}>Logout</button>
           </> :

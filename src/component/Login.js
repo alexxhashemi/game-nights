@@ -6,6 +6,10 @@ import useLocalStorage from "use-local-storage";
 import "./Login.css";
 
 export default function Login() {
+  useEffect(() => {
+    document.title = "Login";  
+  }, []);
+
   //Need inoder to redirect
   let navigate = useNavigate();
 
@@ -22,7 +26,7 @@ export default function Login() {
       })
       .then((res) => {
         setCookie("user", "cookiesvalue");
-        navigate("/appointments");
+        navigate("/meetings");
       });
   };
 

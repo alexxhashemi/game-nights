@@ -6,7 +6,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col } from 'react-bootstrap';
 import './index.css'
 
-export default function Appointments(props) {
+export default function Meetings(props) {
+  useEffect(() => {
+    document.title = "Meetings";  
+  }, []);
+
 
   const [appointments, setAppointments] = useState([]);
   const [games, setGames] = useState([]);

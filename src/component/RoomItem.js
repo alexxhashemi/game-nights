@@ -3,9 +3,12 @@ import { JitsiMeeting } from '@jitsi/react-sdk';
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import './RoomItem.css'
-import { v4 as uuidv4 } from 'uuid';
 
 export default function RoomItem(props) {
+  useEffect(() => {
+    document.title = "Meetings";  
+  }, []);
+
   let navigate = useNavigate();
 
   //Jitsi API
