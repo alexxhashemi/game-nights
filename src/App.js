@@ -29,7 +29,7 @@ function App() {
           <>
             <Link to="/meetings" style={{ textDecoration: 'none', margin: '15px' }} >Meetings</Link>
             <Link to="/host" style={{ textDecoration: 'none', margin: '15px' }}>Host</Link>
-            <button className="logout" style={{ margin: '15px 1.2em' }} type="submit" onClick={logout}>Logout</button>
+            <button className="logout" style={{ margin: '15px 1.2em', fontSize: '20px' }} type="submit" onClick={logout}>Logout</button>
           </> :
           <>
             <Link to="/login" style={{ textDecoration: 'none', margin: '15px' }}>Login</Link>

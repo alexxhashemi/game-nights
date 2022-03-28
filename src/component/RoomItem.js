@@ -131,7 +131,7 @@ export default function RoomItem(props) {
         room_id: room_id,
       })
       .then((res) => {
-        navigate("/appointments");
+        navigate("/meetings");
       });
   };
 
