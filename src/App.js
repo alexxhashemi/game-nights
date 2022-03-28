@@ -3,7 +3,7 @@ import { Outlet, Link } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
 import "./App.css";
 
-function App() {
+function App(props) {
   const [cookies, setCookies, removeCookie] = useCookies(['user']);
   console.log(cookies);
 
@@ -11,6 +11,7 @@ function App() {
     removeCookie('user');
     window.location.href = '/';
   }
+  console.log(cookies)
 
   return (
     <div className="App" >
@@ -29,7 +30,10 @@ function App() {
           <>
             <Link to="/meetings" style={{ textDecoration: 'none', margin: '15px' }} >Meetings</Link>
             <Link to="/host" style={{ textDecoration: 'none', margin: '15px' }}>Host</Link>
-            <button className="logout" style={{ margin: '15px 1.2em', fontSize: '20px' }} type="submit" onClick={logout}>Logout</button>
+            <div className="email-logout">
+              <h4 style={{color: 'white'}}>{cookies.user}</h4>
+              <button className="logout" style={{ margin: '15px 1.2em', fontSize: '20px' }} type="submit" onClick={logout}>Logout</button>
+            </div>
           </> :
           <>
             <Link to="/login" style={{ textDecoration: 'none', margin: '15px' }}>Login</Link>

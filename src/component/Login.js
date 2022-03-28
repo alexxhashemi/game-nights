@@ -12,7 +12,7 @@ export default function Login() {
 
   //Need inoder to redirect
   let navigate = useNavigate();
-
+ 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -25,7 +25,7 @@ export default function Login() {
         password: password,
       })
       .then((res) => {
-        setCookie("user", "cookiesvalue");
+        setCookie("user", email);
         navigate("/meetings");
       });
   };
@@ -35,6 +35,8 @@ export default function Login() {
     const newTheme = theme === "dark" ? "light" : "dark";
     setTheme(newTheme);
   };
+
+  console.log(cookies)
 
   return (
     <form
