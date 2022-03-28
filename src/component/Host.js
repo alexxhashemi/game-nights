@@ -140,6 +140,14 @@ export default function Host() {
                 />{" "}
                 Board Game
                 <br></br>
+                <input
+                  type="checkbox"
+                  name="Role-playing Game"
+                  value="Role-playing Game"
+                  onChange={onCheck}
+                />{" "}
+                Role-playing Game
+                <br></br>
               </div>
               <button type="submit" onClick={submitForum}>
                 Submit
@@ -147,8 +155,9 @@ export default function Host() {
             </div>
           </div>
           <div className="theme-toggle">
-            <h4>☀️ 🌒</h4>
-            <i onClick={switchTheme} className="fas fa-toggle-on"></i>
+          <i onClick={switchTheme} className="fas fa-toggle-on"></i>
+            {theme === 'light' && <h5>☀️</h5>}
+            {theme === 'dark' && <h5>🌒</h5>}            
           </div>
         </div>
       </div>

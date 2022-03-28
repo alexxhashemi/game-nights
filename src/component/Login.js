@@ -79,8 +79,9 @@ export default function Login() {
             </div>
           </div>
           <div className="theme-toggle">
-            <h4>☀️ 🌒</h4>
-            <i onClick={switchTheme} className="fas fa-toggle-on"></i>
+          <i onClick={switchTheme} className="fas fa-toggle-on"></i>
+            {theme === 'light' && <h5>☀️</h5>}
+            {theme === 'dark' && <h5>🌒</h5>}      
           </div>
         </div>
       </div>

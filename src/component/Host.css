@@ -35,7 +35,7 @@ a {
 .host-main {
   background-color: var(--background);
   color: var(--text-primary);
-  height: 100vh;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -111,6 +111,16 @@ button {
 
 .category {
   font-size: 1.3em;
+}
+
+i {
+  margin-right: 5px;
+}
+
+.theme-toggle {
+  display: flex;
+  justify-content: center;
+
 }
 
 @media screen and (max-width: 900px) {
