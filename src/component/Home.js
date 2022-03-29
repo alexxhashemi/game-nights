@@ -17,7 +17,7 @@ export default function Home() {
           alt="First slide"
         />
         <Carousel.Caption>
-          <h1>Welcome to Game Nights!</h1>
+          <h1>Welcome to Game Nights! Where every night is a game night</h1>
           <br />
           <h4>Game Nights allows users to join or create meeting rooms based on the type of game that they're hosting. This allows users to find others to play a game together and maybe make new friends in the process!</h4>
           <br />
