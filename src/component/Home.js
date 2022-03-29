@@ -26,8 +26,8 @@ export default function Home() {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://github.com/AliHashemi86/game-nights/blob/master/docs/AppointmentGif.gif?raw=true"
-          alt="Appointments slide"
+          src="https://github.com/AliHashemi86/game-nights/blob/master/docs/Meetings.gif?raw=true"
+          alt="Meetings slide"
         />
 
         <Carousel.Caption style={{ color: 'white' }}>
@@ -37,7 +37,7 @@ export default function Home() {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://github.com/AliHashemi86/game-nights/blob/master/docs/RoomsGif.gif?raw=true"
+          src="https://github.com/AliHashemi86/game-nights/blob/master/docs/FinalRooms.gif?raw=true"
           alt="Rooms slide"
         />
 
